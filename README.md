@@ -1,24 +1,5 @@
 # vue-training
 
-## Project setup
-```
-yarn install
-```
+- [作りながら学ぶ Vue.js パート 1](https://note.com/tis_engineer/n/na5142f04a253)
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- [作りながら学ぶ Vue.js パート 2](https://note.com/tis_engineer/n/ne6ff2e82196b)
