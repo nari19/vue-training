@@ -6,5 +6,9 @@
 
 <style lang="scss" scoped>
 .header {
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+  padding: 5px 0;
 }
 </style>
