@@ -16,7 +16,18 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      inputTitle: "",
+      inputPeriod: "",
+      inputDetail: "",
+    };
+  },
+  methods: {
+    createTask() {},
+  },
+};
 </script>
 
 <style lang="scss"></style>
