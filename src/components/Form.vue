@@ -27,7 +27,14 @@ export default {
     };
   },
   methods: {
-    async createTask() {},
+    async createTask() {
+      const result = await api.post("/tasks", {
+        title: this.inputTitle,
+        period: this.inputPeriod,
+        detail: this.inputDetail,
+      });
+      console.log(result);
+    },
   },
 };
 </script>

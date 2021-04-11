@@ -7,8 +7,8 @@ const NeDB = require("nedb");
 const db = {
   tasks: new NeDB({
     filename: "data/tasks",
-    autoload: true
-  })
+    autoload: true,
+  }),
 };
 
 // cors
@@ -34,7 +34,7 @@ app.post("/tasks", (req, res, next) => {
     {
       title: req.body.title,
       detail: req.body.detail,
-      period: req.body.period
+      period: req.body.period,
     },
     (err, newDoc) => {
       res.send(newDoc);
@@ -53,8 +53,8 @@ app.put("/tasks/:id", (req, res, next) => {
       $set: {
         title: req.body.title,
         detail: req.body.detail,
-        period: req.body.period
-      }
+        period: req.body.period,
+      },
     },
     { upsert: false, returnUpdatedDocs: true },
     (err, numOfDocs, updatedDocs) => {
