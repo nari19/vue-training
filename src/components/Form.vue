@@ -16,6 +16,8 @@
 </template>
 
 <script>
+import api from "@/api";
+
 export default {
   data() {
     return {
@@ -25,9 +27,7 @@ export default {
     };
   },
   methods: {
-    createTask() {
-      // タスクを作成する処理
-    },
+    async createTask() {},
   },
 };
 </script>
