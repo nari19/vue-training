@@ -1,16 +1,16 @@
 <template>
   <div class="container">
     <div class="item">
-      <input type="text" name="title" />
+      <input type="text" name="title" v-model="inputTitle" />
     </div>
     <div class="item">
-      <input type="text" name="period" />
+      <input type="text" name="period" v-model="inputPeriod" />
     </div>
     <div class="item">
-      <textarea name="detail"></textarea>
+      <textarea name="detail" v-model="inputDetail"></textarea>
     </div>
     <div class="item">
-      <button>作成</button>
+      <button @click="createTask">作成</button>
     </div>
   </div>
 </template>
@@ -25,7 +25,9 @@ export default {
     };
   },
   methods: {
-    createTask() {},
+    createTask() {
+      // タスクを作成する処理
+    },
   },
 };
 </script>
