@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <p>{{ errorMessage }}</p>
     <div class="item">
       <input type="text" name="title" v-model="inputTitle" />
     </div>
@@ -7,7 +8,13 @@
       <input type="text" name="period" v-model="inputPeriod" />
     </div>
     <div class="item">
-      <textarea name="detail" v-model="inputDetail"></textarea>
+      <textarea
+        name="detail"
+        id
+        cols="30"
+        rows="10"
+        v-model="inputDetail"
+      ></textarea>
     </div>
     <div class="item">
       <button @click="createTask">作成</button>
@@ -24,16 +31,28 @@ export default {
       inputTitle: "",
       inputPeriod: "",
       inputDetail: "",
+      errorMessage: "",
     };
   },
   methods: {
     async createTask() {
-      const result = await api.post("/tasks", {
-        title: this.inputTitle,
-        period: this.inputPeriod,
-        detail: this.inputDetail,
-      });
-      console.log(result);
+      if (this.inputTitle === "") {
+        this.errorMessage = "タイトルを入力してください";
+        return;
+      }
+      let result; // 成功した場合と失敗した場合の両方でresultを扱うことができるようにするためletを使用
+      try {
+        result = await api.post("/tasks", {
+          title: this.inputTitle,
+          period: this.inputPeriod,
+          detail: this.inputDetail,
+        });
+        console.log(result);
+      } catch (err) {
+        this.errorMessage = "サーバーでエラーが発生しました";
+        return;
+      }
+      this.errorMessage = "";
     },
   },
 };
